@@ -3,6 +3,7 @@ import './App.css';
 import Colors from './components/Colors' //File for color options for the product
 import Sizes from './components/Sizes'; //File for sizes of the products
 import ProductDetails from './components/ProductDetails'; //File for products' details
+import DetailsThumb from './components/DetailsThumb'; //File for thumbnails for the products
 
 class App extends React.Component{
 
@@ -76,6 +77,7 @@ class App extends React.Component{
 
                 <p className="divider"></p>
                 <p className="description">SEE MORE PRODUCTS:</p>
+                <DetailsThumb images={item.src} tab={this.handleTab} myRef={this.myRef} />
 
               </div>
             </div>

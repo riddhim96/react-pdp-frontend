@@ -116,3 +116,23 @@ ul{
   color: #bbbbbb;
   font-size: 15px;
 }
+.box .contents li{
+  list-style-type: none;
+}
+.box .content{
+  margin-bottom: 40px;
+}
+.divider{
+  height: 1px;
+  background:#bdbdbd50;
+  width:100%;
+  margin:0 auto;
+}
+@media (max-width: 500px){
+  .thumb{
+    height: 50px;
+  }
+  .thumb img{
+    width: 50px;
+  }
+}
