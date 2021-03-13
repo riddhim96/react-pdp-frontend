@@ -37,6 +37,23 @@ class App extends React.Component{
     index: 0
   };
 
+  myRef = React.createRef();
+
+  //Code to switch between the selected colors/products
+  handleTab = index =>{
+    this.setState({index: index})
+    const images = this.myRef.current.children;
+    for(let i=0; i<images.length; i++){
+      images[i].className = images[i].className.replace("active", "");
+    }
+    images[index].className = "active";
+  };
+
+  componentDidMount(){
+    const {index} = this.state;
+    this.myRef.current.children[index].className = "active";
+  }
+
   //Code that renders the ui
   render(){
     const {products, index} = this.state;

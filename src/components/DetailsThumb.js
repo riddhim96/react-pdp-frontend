@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 
 export class DetailsThumb extends Component {
     render() {
-        const {images} = this.props;
+        const {images, tab, myRef} = this.props;
         return (
-            <div className="thumb">
+            <div className="thumb" ref={myRef}>
                 {
-                images.map((img) =>(
-                    <img src={img} alt=""
+                images.map((img, index) =>(
+                    <img src={img} alt="" key={index}
+                    onClick={() => tab(index)}
                     />
                 ))
                 }
