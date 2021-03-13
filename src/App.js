@@ -1,5 +1,8 @@
 import React from 'react';
 import './App.css';
+import Colors from './components/Colors' //File for color options for the product
+import Sizes from './components/Sizes'; //File for sizes of the products
+import ProductDetails from './components/ProductDetails'; //File for products' details
 
 class App extends React.Component{
 
@@ -60,14 +63,16 @@ class App extends React.Component{
                 </div>
                 <p>AED {item.price[index]}</p>
 
-                <p className="sub-title">Available Sizes:  </p>
+                <p className="sub-title">Available Sizes: <Sizes sizes={item.sizes}/></p>
 
                 <p className="sub-title">Colors:</p>
+                <Colors colors={item.colors} tab={this.handleTab} myRef={this.myRef} />
 
                 <button className="cart">Add to cart</button>
 
                 <p className="description">{item.description}</p>
                 <p className="content">{item.content}</p>
+                <p className="content"><ProductDetails productdetails={item.content2}/></p>
 
                 <p className="divider"></p>
                 <p className="description">SEE MORE PRODUCTS:</p>
